@@ -32,9 +32,14 @@ export class CadastroComponent implements OnInit {
         this.user = resp
         this.router.navigate(['/login'])
         alert('Usuário cadastrado com sucesso!')
+        }, err => {
+           console.log(`Erro cod: ${err.status}`)
+          if (err.status==400) {
+             alert("usuario ja cadastrado")
+          }
       })
     } else{
       alert('Suas senhas não conferem')
-    }      
+    } 
   }
 }

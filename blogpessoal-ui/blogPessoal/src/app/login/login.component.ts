@@ -9,16 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   userLogin: UserLogin = new UserLogin()
 
   constructor(
     private authService: AuthService,
     private router: Router
   ) { }
-
-  ngOnInit() {
-  }
 
   entrar(){
     this.authService.logar(this.userLogin).subscribe((resp: UserLogin) =>{
@@ -27,4 +23,8 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/feed'])
     })
   }
+  
+  ngOnInit() {
+  }
+  
 }
