@@ -10,7 +10,6 @@ import { TemaService } from '../service/tema.service';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
-
   key = 'data'
   reverse = true
   
@@ -28,7 +27,6 @@ export class FeedComponent implements OnInit {
 
   ngOnInit(){
       window.scroll(0, 0)
-
       this.findAllPostagens()
       this.findAllTemas()
       
